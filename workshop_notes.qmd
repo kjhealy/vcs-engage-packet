@@ -1,0 +1,46 @@
+---
+title: "Engaging and Effective ggplot"
+subtitle: "VCS 2025 Workshop Notes"
+author: "<Your Name Here>"
+format: html
+---
+
+This is a quarto file where you can take your notes. To install all the packages used in the workshop, manually run the following chunk of code _once_:
+
+```{r}
+#| label: Package Installation
+#| echo: false
+#| eval: false
+#| include: false
+
+## Code to run at the RStudio console begins here
+my_packages <- c("tidyverse", "broom", "cowplot", 
+                  "drat", "gapminder", "ggforce", 
+                  "ggrepel", "ggraph", "ggridges", 
+                 "graphlayouts", "here", "naniar", 
+                 "palmerpenguins", "patchwork", 
+                 "prismatic", "quantreg", "remotes",
+                 "scales", "sf", "socviz", "survey", 
+                 "srvyr", "tidygraph")
+
+install.packages(my_packages, repos = "http://cran.rstudio.com")
+
+data_packages <- paste0("kjhealy/", c("cavax", "covdata", "congress", 
+                                      "demog", "nycdogs", "uscenpops"))
+remotes::install_github(data_packages)
+
+```
+
+
+# Notes
+
+You can begin your notes here. 
+
+```{r}
+#| label: My first code chunk
+
+1 + 1
+
+```
+
+
