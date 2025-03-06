@@ -1,13 +1,69 @@
-# Engaging and Effective ggplot: VCS 2025 Workshop
+# Engaging and Effective ggplot
+Kieran Healy
+2025-03-06
 
-## Kieran Healy
+## Before the Workshop
 
+If you can, do the following:
 
-## What's here
+### Download the Course Packet
 
-- HTML slides in `html_slides/`. Open the `index.html` file in your browser.   
-- PDF version of slides in `pdf_slides/`
-- Code shown in the slides is in `code/`. It can also be copied from the HTML slides.
-- Notes qmd file 
+[Click here to download the course packet as a zip
+file.](https://github.com/kjhealy/vcs-engage-packet/archive/refs/heads/main.zip)
+It is an RStudio project containing HTML and PDF versions of the slides
+for the workshop (in fact, more than we will be covering) together with
+code for the graphs we will draw. There is also a starter file for your
+course notes. After you have installed R and RStudio, download the
+course packet and uncompress it on your computer. (If you are on Windows
+*make sure the zip file is actually uncompressed* by right-clicking on
+it and selecting “Extract All”.) Once the packet is uncompressed into a
+folder named `vcs-engage-packet`, double-clicking the file inside that
+folder named `vcs-engage-packet.Rproj` should launch the project in
+RStudio.
 
-There is (deliberately) more material here than we will use in the workshop.  
+We will be working with the most recent stable versions of R and
+RStudio, as well as with a number of additional packages. You will need
+to install R, RStudio, and the necessary packages on your own computer.
+
+### Install R and RStudio on your Laptop
+
+- Begin by installing R (<http://cloud.r-project.org>). Choose the
+  version appropriate for your computing platform:
+  - [macOS with an Apple Silicon (M-series)
+    processor](https://cran.r-project.org/bin/macosx/big-sur-arm64/base/R-4.4.3-arm64.pkg)
+  - [macOS with an Intel
+    processor](https://cran.r-project.org/bin/macosx/big-sur-x86_64/base/R-4.4.3-x86_64.pkg)
+  - [Windows](https://cran.r-project.org/bin/windows/base/),
+  - [Linux](https://cloud.r-project.org/bin/linux/).
+- Next, install RStudio (<https://posit.co/download/rstudio-desktop/>).
+  Follow the links under “2: Install RStudio” to download the free
+  RStudio Desktop edition recommended for your system.
+
+### Install some additional packages
+
+- Once the applications are installed, launch RStudio. Either carefully
+  type in or copy-and-paste the following lines of code at R’s command
+  prompt, located in the RStudio window named “Console”, and then hit
+  return. In the code below, the \<- arrow is made up of two keystrokes,
+  first \< and then the short dash or minus symbol, -.
+
+``` r
+
+## Code to run at the RStudio console begins here
+my_packages <- c("tidyverse", "broom", "cowplot", 
+                  "drat", "gapminder", "ggforce", 
+                  "ggrepel", "ggraph", "ggridges", 
+                 "graphlayouts", "here", "naniar", 
+                 "palmerpenguins", "patchwork", 
+                 "prismatic", "quantreg", "remotes",
+                 "scales", "sf", "socviz", "survey", 
+                 "srvyr", "tidygraph")
+
+install.packages(my_packages, repos = "http://cran.rstudio.com")
+
+data_packages <- paste0("kjhealy/", c("cavax", "covdata", "congress", 
+                                      "demog", "nycdogs", "uscenpops"))
+remotes::install_github(data_packages)
+
+## Code to run ends here
+```
